@@ -1,0 +1,190 @@
+body::after{
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(71, 55, 78, 0.8);
+  z-index: 99998;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: .6s ease;
+  -webkit-transition: .6s ease;
+}
+body:not(.bwc-is-responsive).bma-dark-overlay:after{
+  opacity: .8;
+  visibility: visible;
+}
+body.bma-dark-overlay{
+  /*overflow: hidden;*/
+}
+
+.bwc-is-animation{
+  pointer-events: none;
+}
+
+.bwc-quick-view-wrap{
+  visibility: hidden;
+  opacity: 0;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 999999;
+}
+
+body:not(.bwc-is-responsive).bma-active .bwc-quick-view-wrap{
+  visibility: visible;
+  opacity: 1;
+}
+
+.bwc-quick-view-wrap .bwc-quick-view{
+  position: absolute;
+  background: #FFF;
+  left: 200px;
+  top: 200px;
+}
+
+.bwc-quick-view-wrap .bwc-quick-view:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.bwc-quick-view-wrap .bwc-quick-view .bwc-loading{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 45px;
+  line-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+}
+.bwc-quick-view-wrap .bwc-quick-view .bwc-loading svg.lds-coolors{
+  width: 100%;
+  height: 100%;
+}
+
+.bwc-quick-view-wrap .bwc-quick-view.bwc-ajax-load-enable .bwc-loading{
+  visibility: visible;
+  opacity: 1;
+}
+
+.bwc-quick-view .bwc-slider-wrapper{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider{
+  padding: 0;
+  margin: 0;
+}
+
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider li{
+  list-style: none;
+  font-size: 0;
+}
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider li img{
+  width: 100%;
+  border-radius: 0;
+}
+
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider-navigation{
+  margin: 0;
+  display: none;
+}
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider-navigation li{
+  position: absolute;
+  list-style: none;
+}
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider-navigation li:nth-child(1),
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider-navigation li:nth-child(2){
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider-navigation li:nth-child(1){
+  left: 0;
+}
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider-navigation li:nth-child(2){
+  right: 0;
+}
+
+.bwc-quick-view .bwc-slider-wrapper .bwc-slider-navigation li a{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.bwc-quick-view .bwc-item-info{
+  float: left;
+  padding: 3em;
+  overflow: auto;
+
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.bwc-quick-view .bwc-item-info .tinv-wishlist .tinv-wishlist-clear{
+  visibility: unset;
+}
+
+body:not(.bwc-is-responsive) .bwc-quick-view .bwc-item-info.bwc-active-anime-item{
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+
+.bwc-quick-view .bwc-item-info .bwc-anime-item{
+  visibility: hidden;
+  opacity: 0;
+
+  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  transition: .8s cubic-bezier(.86,0,.56,.94);
+  -webkit-transition: .8s cubic-bezier(.86,0,.56,.94);
+}
+
+body:not(.bwc-is-responsive) .bwc-quick-view .bwc-item-info.bwc-active-anime-item .bwc-anime-item{
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.bwc-quick-view .bwc-close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #333;
+  padding: 5px;
+  /*box-shadow: -3px 7px 21px -6px rgba(1,1,1,.25);*/
+  border-radius: 30px;
+  line-height: 0;
+  font-size: 9px;
+  z-index: 9;
+  text-decoration: none;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+}
+.bwc-quick-view .bwc-close:hover{
+  color: red;
+  box-shadow: -3px 7px 21px -6px rgba(1,1,1,.25);
+}
+
+/* responsive */
+.bwc-is-responsive .bwc-quick-view{}
+.bwc-is-responsive .bwc-quick-view .bwc-slider-wrapper{}
+.bwc-is-responsive .bwc-quick-view-button{
+  display: none !important;
+}
